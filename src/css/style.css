@@ -224,19 +224,6 @@ input:read-only:focus {
   color: black;
 }
 
-.dev-signature {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 8.5vh;
-  width: 100vw;
-  text-align: center;
-  font-size: 2vh;
-  color: #333;
-  background: transparent;
-  padding: 4px 0;
-}
-
 .alertModal {
   display: none;
   align-items: center;
