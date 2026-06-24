@@ -1,5 +1,6 @@
 import { view2, appState, labelElements } from "./state.js";
 import { clear, customAlert, initFocus } from "./utils.js";
+import { playErrorSound, playSuccessSound } from "./audio.js";
 
 export function printData() {
   if (appState.isPrinting) return;
@@ -28,10 +29,12 @@ export function printData() {
   }
 
   setLabelData();
+  playSuccessSound();
 
   window.focus();
 
   setTimeout(() => {
+    
     window.print();
     clear();
     appState.isPrinting = false;
@@ -55,7 +58,7 @@ function setLabelData() {
   labelElements.date.textContent = `${formattedDate} ${formattedTime}`;
 
   labelElements.name.innerHTML = appState.operatorName;
-  labelElements.sector.innerHTML = appState.operatorSector;
+ 
 
   const pn =
     appState.isAuto === true ? appState.lastPn : view2.inputPN.value.trim();

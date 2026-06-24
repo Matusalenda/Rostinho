@@ -1,18 +1,20 @@
-const CACHE_NAME = "Rostinho-v6";
+const CACHE_NAME = "Rostinho-v7";
 const urlsToCache = [
   "./",
   "./index.html",
   "./manifest.json",
   "./src/css/style.css",
   "./src/css/label.css",
+  "./src/audio/error.wav",
+  "./src/audio/success.wav",
+  "./src/audio/scan.wav",
   "./src/JS/main.js",
   "./src/JS/lib/qrcode-lib.js",
   "./src/JS/modules/keyboard.js",
   "./src/JS/modules/printData.js",
   "./src/JS/modules/state.js",
   "./src/JS/modules/utils.js",
-  "./src/JS/modules/view1.js",
-  "./src/JS/modules/view2.js",
+  "./src/JS/modules/audio.js",
   "./src/img/icon-192.svg",
   "./src/img/icon-512.svg",
 ];
