@@ -15,7 +15,6 @@ const urlsToCache = [
   "./src/JS/modules/view2.js",
   "./src/img/icon-192.svg",
   "./src/img/icon-512.svg",
-  "./src/img/toyota-logo.png",
 ];
 
 // Instalar o service worker e cachear os arquivos
