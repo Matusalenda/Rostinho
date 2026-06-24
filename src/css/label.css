@@ -186,22 +186,15 @@
 
 .label-history {
   width: 100%;
+  height: 1.3cm;
   font-size: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   gap: 4px;
-  padding: 6px 0;
+  
   box-sizing: border-box;
-}
-
-.label-history-fields {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-bottom: 3px;
 }
 
 .history-title {
@@ -211,4 +204,13 @@
   text-align: center;
   padding: 2px 0;
   font-size: 10px;
+}
+
+.label-history-fields {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 4px;
 }
