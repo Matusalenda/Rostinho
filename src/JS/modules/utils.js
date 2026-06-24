@@ -1,5 +1,6 @@
 import { appState, view1, view2, views, labelElements } from "./state.js";
 import { alertElements } from "./state.js";
+import { playErrorSound, playScanSound } from "./audio.js";
 
 // INITIAL FOCUS
 export function initFocus() {
@@ -17,7 +18,8 @@ export function initFocus() {
       view2.inputPN.focus();
     }
   }
-}
+}
+
 
 // SWITCH VIEWS BACK AND NEXT
 export function switchView(direction) {
@@ -88,6 +90,7 @@ export function toggleAutoButton() {
 export function customAlert(msg) {
   // Usa readonly para impedir digitação sem mudar aparência
 
+  playErrorSound();
   view1.inputName.readOnly = true;
   view2.inputPN.readOnly = true;
   view2.inputQTY.readOnly = true;
@@ -119,6 +122,7 @@ export function scanPn() {
     }
 
     if (appState.lastPn === "" || appState.lastPn === currentPn) {
+      playScanSound();
       appState.lastPn = appState.lastPn || currentPn;
       appState.qtyCount++;
       view2.inputQTY.value = appState.qtyCount;
