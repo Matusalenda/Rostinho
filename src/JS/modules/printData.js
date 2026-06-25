@@ -1,5 +1,5 @@
 import { view2, appState, labelElements } from "./state.js";
-import { clear, customAlert, initFocus } from "./utils.js";
+import { clear, customAlert, initFocus, formatQty } from "./utils.js";
 import { playErrorSound, playSuccessSound } from "./audio.js";
 
 export function printData() {
@@ -71,7 +71,11 @@ function setLabelData() {
     labelElements.labelPnTop.textContent = appState.lastPn.slice(0, 5);
     labelElements.labelPnBottom.textContent = appState.lastPn.slice(5);
     labelElements.labelPnBottom.style.cssText = pnBottomStyle;
-    labelElements.labelQty.textContent = appState.qtyCount;
+    
+    const qtyDisplay = formatQty(appState.qtyCount);
+    labelElements.labelQty.textContent = qtyDisplay.text;
+    labelElements.labelQty.style.fontSize = `${qtyDisplay.fontSize}px`;
+    labelElements.labelQty.style.transform = `scaleX(${qtyDisplay.scaleX})`;
   } else {
     labelElements.labelPnTop.textContent = view2.inputPN.value
       .trim()
@@ -82,7 +86,11 @@ function setLabelData() {
       .slice(5)
       .toUpperCase();
     labelElements.labelPnBottom.style.cssText = pnBottomStyle;
-    labelElements.labelQty.textContent = view2.inputQTY.value.trim();
+
+    const qtyDisplay = formatQty(view2.inputQTY.value.trim());
+    labelElements.labelQty.textContent = qtyDisplay.text;
+    labelElements.labelQty.style.fontSize = `${qtyDisplay.fontSize}px`;
+    labelElements.labelQty.style.transform = `scaleX(${qtyDisplay.scaleX})`;
   }
   generateQRCodes();
 }

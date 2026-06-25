@@ -154,3 +154,16 @@ export function pnFormat(pn) {
   }
 }
 
+export function formatQty(qty) {
+  const qtyNum = Number(qty);
+  const text = Number.isFinite(qtyNum)
+    ? new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 }).format(qtyNum)
+    : qty;
+
+  const style =  qtyNum >= 100000
+      ? { fontSize: 155, scaleX: 0.85 }
+      : { fontSize: 170, scaleX: 1 };
+
+  return { text, ...style };
+}
+
