@@ -9,7 +9,6 @@ import { view1, view2, appState } from "./modules/state.js";
 import { keyboardHandler } from "./modules/keyboard.js";
 import { printData } from "./modules/printData.js";
 
-window.debug = false;
 
 // Script está no final do body, DOM já está pronto
 initFocus();
