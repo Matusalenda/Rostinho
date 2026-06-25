@@ -1,4 +1,4 @@
-const CACHE_NAME = "Rostinho-v7";
+const CACHE_NAME = "Rostinho-v1";
 const urlsToCache = [
   "./",
   "./index.html",

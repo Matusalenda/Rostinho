@@ -27,9 +27,11 @@ Rostinho/
 |           |-- main.js       Inicialização do app
 |           |-- lib/          Bibliotecas locais
 |           `-- modules/      Módulos da aplicação
-|-- service-worker.js 
+|-- service-worker.js        Cache e suporte offline para a PWA
+|-- manifest.json            Metadados do app instalável
 |-- README.md
 ```
+
 
 ### Arquivos principais:
 
@@ -46,6 +48,15 @@ Rostinho/
 
 
 # Desenvolvimento e manutenção
+
+
+## Service Worker
+
+O app possui um service-worker que no primeiro acesso registra um cache chamado "Rostinho-v1" e armazena os seus arquivos principais. Nos próximos acessos utiliza uma esratégia chamada cache-first, onde busca sempre os arquivos salvos em cache, possibilitando o uso do app offline.
+
+## Manifest.json
+
+O manifest.json do projeto define que o app se chama ROSTINHO, inicia em index.html, ocupa a tela inteira em modo standalone e usa ícones em 192x192 e 512x512. Também define a cor de fundo, a cor temática e a orientação portrait-primary, o que faz com que o app seja exibido como um aplicativo instalado e com identidade visual consistente.
 
 
 ## Onde editar
@@ -76,6 +87,10 @@ Os módulos JavaScript ficam em:
 src/JS/
 src/JS/modules/
 ```
+
+### Geração de QR Code
+
+O projeto possui uma biblioteca local em `src/JS/lib/qrcode-lib.js` para gerar os QR Codes usados nas etiquetas. Ela recebe uma string, gera o padrão do código em formato matricial e renderiza o resultado em um container HTML, sendo usada pela lógica de impressão em `src/JS/modules/printData.js`.
 
 ### Sons do app
 
@@ -117,10 +132,19 @@ Para testar no navegador, após executar as alterações nos arquivos salve o ar
 python -m http.server 8080
 ```
 
-Depois acesse:
+```bash
+start chrome http://localhost:8080
+```
 
-```text
-http://localhost:8080
+## Limitação de zoom
+
+Em ./index.html na tag `HEAD` no viewport o zoom da página foi bloqueado, com o intuito de manter a interface estável e evitar alterações indesejadas no layout durante o uso em terminal ou em ambientes controlados.
+
+```bash
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover"
+    />
 ```
 
 # Usabilidade
