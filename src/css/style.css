@@ -37,6 +37,10 @@ button:active {
   box-shadow: none !important;
 }
 
+button {
+  cursor: pointer;
+}
+
 .top {
   background-color: rgb(69, 67, 67);
   font-family: Arial, Helvetica, sans-serif;
@@ -284,6 +288,7 @@ input:read-only:focus {
   font-size: clamp(1rem, 3vw, 1.2rem);
   background: linear-gradient(180deg, #ffb300, #ff9800);
   box-shadow: 0 3px 0 #c77700;
+  
 }
 
 .alertConfirm:active {

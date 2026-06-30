@@ -113,7 +113,7 @@ export function customAlert(msg) {
 
 // READ PART-NUMBER AND COUNT QUANTITY
 export function scanPn() {
-  const currentPn = view2.inputPN.value.trim().toUpperCase();
+  const currentPn = view2.inputPN.value.trim().toUpperCase().replaceAll("-" , "");
 
   if (appState.isAuto === true && appState.actualView === 1) {
     if (currentPn === "" && appState.lastPn === "") {
