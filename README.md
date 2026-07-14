@@ -1,7 +1,7 @@
 # Rostinho
 
 <p>
-  é um web-app PWA(Progressive Web Application) desenvolvido com a finalidade de gerar etiquetas A4 utilizadas na identificação e armazenagem de pallets na Toyota do Brasil.
+  é um web-app PWA(Progressive Web Application) desenvolvido com a finalidade de gerar etiquetas A4 utilizadas na identificação e armazenagem de pallets.
 </p>
 
 ## Stack utilizada
