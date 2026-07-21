@@ -12,7 +12,6 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="64" height="64" />
 </p>
 
-
 ## Estrutura do projeto
 
 ```text
@@ -27,37 +26,26 @@ Rostinho/
 |           |-- main.js       Inicialização do app
 |           |-- lib/          Bibliotecas locais
 |           `-- modules/      Módulos da aplicação
-|-- service-worker.js        Cache e suporte offline para a PWA
 |-- manifest.json            Metadados do app instalável
 |-- README.md
 ```
 
-
 ### Arquivos principais:
 
-| Arquivo                           | Responsabilidade                                          |
-| --------------------------------- | --------------------------------------------------------- |
-| `src/JS/main.js`              | Inicialização e eventos principais.                       |
-| `src/JS/modules/state.js`     | Variaveis de estado compartilhado do app.                              |
-| `src/JS/modules/keyboard.js`  | Atalhos e fluxo pelo teclado/scanner.                     |
-| `src/JS/modules/utils.js`     | Foco, troca de telas, limpeza e modo AUTO/MANUAL.         |
-| `src/JS/modules/audio.js`     | Carrega e toca os arquivos WAV de erro, scan e sucesso.   |
-| `src/JS/modules/printData.js` | Geração da etiqueta, QR Codes e impressão. |
-
-
-
+| Arquivo                       | Responsabilidade                                        |
+| ----------------------------- | ------------------------------------------------------- |
+| `src/JS/main.js`              | Inicialização e eventos principais.                     |
+| `src/JS/modules/state.js`     | Variaveis de estado compartilhado do app.               |
+| `src/JS/modules/keyboard.js`  | Atalhos e fluxo pelo teclado/scanner.                   |
+| `src/JS/modules/utils.js`     | Foco, troca de telas, limpeza e modo AUTO/MANUAL.       |
+| `src/JS/modules/audio.js`     | Carrega e toca os arquivos WAV de erro, scan e sucesso. |
+| `src/JS/modules/printData.js` | Geração da etiqueta, QR Codes e impressão.              |
 
 # Desenvolvimento e manutenção
-
-
-## Service Worker
-
-O app possui um service-worker que no primeiro acesso registra um cache chamado "Rostinho-v1" e armazena os seus arquivos principais. Nos próximos acessos utiliza uma esratégia chamada cache-first, onde busca sempre os arquivos salvos em cache, possibilitando o uso do app offline.
 
 ## Manifest.json
 
 O manifest.json do projeto define que o app se chama ROSTINHO, inicia em index.html, ocupa a tela inteira em modo standalone e usa ícones em 192x192 e 512x512. Também define a cor de fundo, a cor temática e a orientação portrait-primary, o que faz com que o app seja exibido como um aplicativo instalado e com identidade visual consistente.
-
 
 ## Onde editar
 
@@ -74,7 +62,7 @@ src/css/style.css
 
 Edite a etiqueta gerada em:
 
-```text
+````text
 ./index.html (estrutura da label)
 src/css/label.css (layout visual)
 src/JS/modules/printData.js (lógica)
@@ -86,7 +74,7 @@ Os módulos JavaScript ficam em:
 ```text
 src/JS/
 src/JS/modules/
-```
+````
 
 ### Geração de QR Code
 
@@ -124,9 +112,7 @@ Para mudar algum som, substitua o respectivo arquivo `.wav` em `www/src/audio/` 
 
 ## Testar no navegador
 
-
 Para testar no navegador, após executar as alterações nos arquivos salve o arquivo e rode um servidor local na raíz do projeto.
-
 
 ```bash
 python -m http.server 8080
@@ -179,7 +165,6 @@ O botão **MODE** alterna entre AUTO e MANUAL.
 | `Seta para cima/baixo` | Alterna entre campos no modo MANUAL.                      |
 
 Algumas teclas do navegador são bloqueadas para evitar saídas acidentais durante o uso em terminal.
-
 
 ## Autor
 
