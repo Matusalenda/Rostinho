@@ -94,8 +94,6 @@
   font-size: 30px;
 }
 
-
-
 .label-pn-title {
   width: 100%;
   display: flex;
@@ -173,44 +171,4 @@
   font-size: 170px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.label-qr-bottom-section {
-  width: 100%;
-  height: 3cm;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-}
-
-.label-history {
-  width: 100%;
-  height: 1.3cm;
-  font-size: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 4px;
-  
-  box-sizing: border-box;
-}
-
-.history-title {
-  background-color: black;
-  color: white;
-  width: 100%;
-  text-align: center;
-  padding: 2px 0;
-  font-size: 10px;
-}
-
-.label-history-fields {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  padding: 4px;
 }
