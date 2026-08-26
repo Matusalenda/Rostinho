@@ -20,17 +20,15 @@ export function initFocus() {
   }
 }
 
-
 // SWITCH VIEWS BACK AND NEXT
 export function switchView(direction) {
-  
   appState.way = direction;
   if (appState.way == "next") {
     view1.inputName.value = "";
     views[0].classList.add("INACTIVE");
     views[1].classList.remove("INACTIVE");
     appState.actualView = 1;
-    view2.displayName.innerText = `OPERADOR: ${appState.operatorName}`;
+    view2.displayName.innerText = appState.operatorName;
 
     initFocus();
   } else {
@@ -113,7 +111,10 @@ export function customAlert(msg) {
 
 // READ PART-NUMBER AND COUNT QUANTITY
 export function scanPn() {
-  const currentPn = view2.inputPN.value.trim().toUpperCase().replaceAll("-" , "");
+  const currentPn = view2.inputPN.value
+    .trim()
+    .toUpperCase()
+    .replaceAll("-", "");
 
   if (appState.isAuto === true && appState.actualView === 1) {
     if (currentPn === "" && appState.lastPn === "") {
@@ -157,13 +158,15 @@ export function pnFormat(pn) {
 export function formatQty(qty) {
   const qtyNum = Number(qty);
   const text = Number.isFinite(qtyNum)
-    ? new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 }).format(qtyNum)
+    ? new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 }).format(
+        qtyNum,
+      )
     : qty;
 
-  const style =  qtyNum >= 100000
+  const style =
+    qtyNum >= 100000
       ? { fontSize: 155, scaleX: 0.85 }
       : { fontSize: 170, scaleX: 1 };
 
   return { text, ...style };
 }
-

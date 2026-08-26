@@ -10,7 +10,7 @@ const view1 = {
 
 // Second screen elements
 const view2 = {
-  displayName: document.getElementById("nameOperator"),
+  displayName: document.getElementById("opName"),
   lastPnReaded: document.getElementById("pnReaded"),
 
   inputPN: document.getElementById("PN"),

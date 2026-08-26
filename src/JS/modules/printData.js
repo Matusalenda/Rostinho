@@ -34,7 +34,6 @@ export function printData() {
   window.focus();
 
   setTimeout(() => {
-    
     window.print();
     clear();
     appState.isPrinting = false;
@@ -57,8 +56,7 @@ function setLabelData() {
 
   labelElements.date.textContent = `${formattedDate} ${formattedTime}`;
 
-  labelElements.name.innerHTML = appState.operatorName;
- 
+  labelElements.name.textContent = appState.operatorName;
 
   const pn =
     appState.isAuto === true ? appState.lastPn : view2.inputPN.value.trim();
@@ -71,7 +69,7 @@ function setLabelData() {
     labelElements.labelPnTop.textContent = appState.lastPn.slice(0, 5);
     labelElements.labelPnBottom.textContent = appState.lastPn.slice(5);
     labelElements.labelPnBottom.style.cssText = pnBottomStyle;
-    
+
     const qtyDisplay = formatQty(appState.qtyCount);
     labelElements.labelQty.textContent = qtyDisplay.text;
     labelElements.labelQty.style.fontSize = `${qtyDisplay.fontSize}px`;
